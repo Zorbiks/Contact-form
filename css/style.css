@@ -121,3 +121,32 @@ form button[type=submit] {
 form button[type=submit]:hover {
 	background-color: var(--grey-900);
 }
+
+.popup {
+	color: #fff;
+	background-color: var(--grey-900);
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	display: none;
+}
+
+.popup.active {
+	display: block;
+	animation-name: slide-down;
+}
+
+.popup h6 {
+	font-size: 18px;
+}
+
+@keyframes slide-down {
+	0% {
+		opacity: 0;
+		top: 0;
+	}
+
+	100% {
+		opacity: 1;
+		top: 2rem;
+	}
+}
