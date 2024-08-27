@@ -30,10 +30,15 @@ body {
 
 section {
 	padding: 2rem;
+	max-width: 584px;
 }
 
 form .err {
+	display: none;
 	color: var(--red);
+}
+form .err.active {
+	display: block;
 }
 
 form .radio-label {
@@ -82,7 +87,7 @@ form input[type=text]:focus {
 
 form textarea {
 	resize: none;
-	height: 100px;
+	height: 101px;
 }
 @media (max-width: 575px) {
 	form textarea {
