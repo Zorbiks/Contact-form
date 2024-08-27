@@ -5,7 +5,6 @@ const email = document.getElementById('email');
 const radios = document.getElementsByName('query');
 const textarea = document.getElementById('message');
 const agreementCheckbox = document.getElementById('agreement');
-const submitBtn = document.getElementById('submit');
 const errorElements = document.getElementsByClassName('err');
 const popup = document.getElementById('popup');
 
@@ -14,7 +13,7 @@ const errorMessages = {
 	'required': 'This field is required',
 	'email': 'Please enter a valid email address',
 	'query' : 'Please select a query type',
-	'agreement' : 'To submit this form, please consent to being contacted',
+	'agreement' : 'To submit this form, please consent to being contacted'
 }
 
 form.addEventListener('submit', formValidation)
@@ -29,7 +28,6 @@ function formValidation(e) {
 	e.preventDefault();
 
 	valid = true;
-
 
 	for (let i = 0; i < errorElements.length; i++) {
 		errorElements[i].classList.remove('active')
@@ -46,7 +44,6 @@ function formValidation(e) {
 	}
 
 	const regex = /.*@.*/;
-
 	if (email.value === '') {
 		showErrorMsg(email.nextElementSibling, errorMessages.required);
 		valid = false;
@@ -75,14 +72,10 @@ function formValidation(e) {
 		showErrorMsg(agreementCheckbox.parentElement.nextElementSibling, errorMessages.agreement)
 		valid = false;
 	}
-}
 
-submitBtn.addEventListener('click', () => {
 	if (valid) {
 		popup.classList.add('active');
 	}
-})
 
-
-
+}
 
